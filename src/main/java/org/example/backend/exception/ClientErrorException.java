@@ -2,7 +2,6 @@ package org.example.backend.exception;
 
 import org.springframework.http.HttpStatus;
 
-import lombok.Getter;
 
 public class ClientErrorException extends RuntimeException{
     private final HttpStatus status;
