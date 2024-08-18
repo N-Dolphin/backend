@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+README.md
+>>>>>>> 5e4d2019ecbe42383cced272808ddb4b1a2de97a
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
