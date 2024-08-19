@@ -26,5 +26,7 @@ public class SwipeEntity extends BaseTimeEntity {
 	@JoinColumn(name = "swipee_id")
 	private ProfileEntity swipee;
 
+	@Column(nullable = false)
+	private boolean isLiking;
 
 }
