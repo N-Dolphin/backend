@@ -13,7 +13,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class SearchFilterEntity {
+public class SearchFilterEntity extends BaseTimeEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long searchFilterId;
@@ -35,10 +35,6 @@ public class SearchFilterEntity {
 	@JoinColumn(name = "profile_id")
 	private ProfileEntity profile;
 
-	@Column
-	private LocalDateTime createdAt;
 
-	@Column
-	private LocalDateTime updatedAt;
 
 }

@@ -13,7 +13,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class ProfileImageEntity {
+public class ProfileImageEntity extends BaseTimeEntity{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long profileImageId;
@@ -28,10 +28,6 @@ public class ProfileImageEntity {
 	@JoinColumn(name = "profile_id")
 	private ProfileEntity profile;
 
-	@Column
-	private LocalDateTime createdAt;
 
-	@Column
-	private LocalDateTime updatedAt;
 
 }

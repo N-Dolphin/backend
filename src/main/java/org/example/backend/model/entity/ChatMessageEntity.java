@@ -14,7 +14,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class ChatMessageEntity {
+public class ChatMessageEntity extends BaseTimeEntity{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long chatMessageId;
@@ -30,7 +30,6 @@ public class ChatMessageEntity {
 	@Column
 	private String text;
 
-	@Column
-	private LocalDateTime createdAt;
+
 
 }

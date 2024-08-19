@@ -14,7 +14,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class AlarmEntity {
+public class AlarmEntity extends BaseTimeEntity{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long alarmId;
@@ -29,7 +29,6 @@ public class AlarmEntity {
 	@Column
 	private Boolean isRead;
 
-	@Column
-	private LocalDateTime createdAt;
+
 
 }

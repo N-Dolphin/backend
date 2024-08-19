@@ -16,7 +16,7 @@ import java.util.List;
 @Setter
 //@ToString
 
-public class ProfileEntity {
+public class ProfileEntity extends BaseTimeEntity{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long profileId;
@@ -38,11 +38,6 @@ public class ProfileEntity {
 	@Column
 	private Gender gender;
 
-	@Column
-	private LocalDateTime createdAt;
-
-	@Column
-	private LocalDateTime updatedAt;
 
 	@OneToMany(mappedBy = "profile")
 	private List<ProfileImageEntity> profileImages;

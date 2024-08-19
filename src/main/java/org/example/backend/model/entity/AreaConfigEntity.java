@@ -14,7 +14,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class AreaConfigEntity {
+public class AreaConfigEntity extends BaseTimeEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long areaConfigId;
@@ -38,7 +38,5 @@ public class AreaConfigEntity {
 	@JoinColumn(name = "profile_id")
 	private ProfileEntity profile;
 
-	@Column
-	private LocalDateTime updatedAt;
 
 }

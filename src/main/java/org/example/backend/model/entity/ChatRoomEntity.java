@@ -14,7 +14,7 @@ import lombok.ToString;
 @Setter
 @ToString
 
-public class ChatRoomEntity {
+public class ChatRoomEntity extends BaseTimeEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long chatRoomId;
@@ -23,8 +23,5 @@ public class ChatRoomEntity {
 	@JoinColumn(name = "match_id")
 	private MatchEntity matchEntity;
 
-	@Column
-	private LocalDateTime createdAt;
 
-	// Getters and Setters
 }

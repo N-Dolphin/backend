@@ -18,7 +18,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Getter
 @Setter
 @ToString
-public class UserEntity implements UserDetails {
+public class UserEntity extends BaseTimeEntity implements UserDetails  {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long userId;
@@ -29,11 +29,7 @@ public class UserEntity implements UserDetails {
 	@Column
 	private String password;
 
-	@Column
-	private LocalDateTime createdAt;
 
-	@Column
-	private LocalDateTime updatedAt;
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "Role", nullable = true)

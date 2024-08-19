@@ -13,7 +13,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class SwipeEntity {
+public class SwipeEntity extends BaseTimeEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long swipeId;
@@ -25,5 +25,6 @@ public class SwipeEntity {
 	@ManyToOne
 	@JoinColumn(name = "swipee_id")
 	private ProfileEntity swipee;
+
 
 }

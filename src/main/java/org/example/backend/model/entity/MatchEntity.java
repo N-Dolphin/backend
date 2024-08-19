@@ -13,7 +13,7 @@ import lombok.ToString;
 @Setter
 @ToString
 
-public class MatchEntity {
+public class MatchEntity extends BaseTimeEntity{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long matchId;
@@ -26,7 +26,5 @@ public class MatchEntity {
 	@JoinColumn(name = "user2_id")
 	private ProfileEntity user2;
 
-	@Column
-	private LocalDateTime createdAt;
 
 }
