@@ -4,9 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
-@SpringBootTest
-@ActiveProfiles("test")  // 'test' 프로파일을 활성화합니다.
-
+@SpringBootTest(classes= BackendApplicationTests.class)
+@ActiveProfiles("test")
 class BackendApplicationTests {
 
     @Test

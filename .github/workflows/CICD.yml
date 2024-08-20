@@ -13,12 +13,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      LOCAL_DB_URL: ${{ secrets.LOCAL_DB_URL }}
+      LOCAL_DB_USERNAME: ${{ secrets.LOCAL_DB_USERNAME }}
+      LOCAL_DB_PASSWORD: ${{ secrets.LOCAL_DB_PASSWORD }}
+
     steps:
       - name: CheckOut Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
