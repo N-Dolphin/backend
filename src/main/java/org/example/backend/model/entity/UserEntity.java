@@ -5,9 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.time.LocalDateTime;
 import java.util.Collection;
-import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,6 +17,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Setter
 @ToString
 public class UserEntity extends BaseTimeEntity implements UserDetails  {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long userId;
@@ -27,16 +26,20 @@ public class UserEntity extends BaseTimeEntity implements UserDetails  {
 	private String email;
 
 	@Column
+	private String username;
+
+	@Column
+	private String loginType;
+
+	@Column
 	private String password;
 
-
-
-	@Enumerated(EnumType.STRING)
-	@Column(name = "Role", nullable = true)
-	private Role role;
+	@Column
+	private String role;
 
 	@OneToOne(mappedBy = "userEntity")
 	private ProfileEntity profile;
+
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -45,7 +48,7 @@ public class UserEntity extends BaseTimeEntity implements UserDetails  {
 
 	@Override
 	public String getUsername() {
-		return "";
+		return this.getUsername();
 	}
 
 	@Override
@@ -66,6 +69,17 @@ public class UserEntity extends BaseTimeEntity implements UserDetails  {
 	@Override
 	public boolean isEnabled() {
 		return true;
+	}
+
+
+	public static UserEntity of(String loginType,String email,String password,String username,String role){
+		var userEntity=new UserEntity();
+		userEntity.setLoginType(loginType);
+		userEntity.setEmail(email);
+		userEntity.setPassword(password);
+		userEntity.setUsername(username);
+		userEntity.setRole(role);
+		return userEntity;
 	}
 }
 
