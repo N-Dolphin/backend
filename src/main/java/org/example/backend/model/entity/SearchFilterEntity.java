@@ -1,11 +1,11 @@
 package org.example.backend.model.entity;
 
 
-import java.time.LocalDateTime;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.example.backend.model.entity.enums.Gender;
 
 @Entity
 @Table(name = "search_filter")
